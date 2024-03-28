@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<style>
+    
+    table,
+    th,
+    td {
+        border: 1px solid #8b8b8b;
+    }
+
+    th {
+        background-color: #ccccff;
+    }
+
+    textarea {
+        width: 98%;
+    }
+
+    #invio {
+        text-align: center;
+    }
+</style>
+
+<head>
+    <title>Sondaggio</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Valore</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="name">Nome</label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="sex">Genere</label>
+                </td>
+                <td>
+                    <input type="radio" id="donna" name="gender" value="donna">
+                    <label for="donna">Donna</label><br>
+                    <input type="radio" id="uomo" name="gender" value="uomo">
+                    <label for="uomo">Uomo</label><br>
+                    <input type="radio" id="non_binary" name="gender" value="non_binary">
+                    <label for="non_binary">Non binary</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="eyecolor">Colore degli occhi</label>
+                </td>
+                <td>
+                    <input list="eyecolors" name="eyecolor">
+                    <datalist id="eyecolors">
+                        <option value="Marroni">
+                        <option value="Verdi">
+                        <option value="Celesti">
+                        <option value="Neri">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Spuntare le corrispondenze</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="alto" name="alto" value="isAlto">
+                    <label for="alto">Alto pi&ugrave; di 1,80m</label><br>
+                    <input type="checkbox" id="pesa" name="pesa" value="isPesante">
+                    <label for="pesa">Pesante pi&ugrave; di 90kg</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="des">Descrivere le capacit&agrave; atletiche</label><br>
+                    <textarea id="des" name="descrizione"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="invio">
+                        <input type="submit">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+
+</body>
+
+</html>
