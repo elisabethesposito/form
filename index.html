@@ -1,101 +1,106 @@
 <!DOCTYPE html>
 <html>
-<style>
-    
-    table,
-    th,
-    td {
-        border: 1px solid #8b8b8b;
-    }
-
-    th {
-        background-color: #ccccff;
-    }
-
-    textarea {
-        width: 98%;
-    }
-
-    #invio {
-        text-align: center;
-    }
-</style>
-
 <head>
-    <title>Sondaggio</title>
+    <title>SONDAGGIO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>    
+  
+        input[type="text"], #eyecolor,textarea {
+            width: 98%;
+        }
+    
+        #invio {
+            text-align: center;
+        }
+
+        
+    </style>
 </head>
 
 <body>
-    <form>
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>Valore</th>
-            </tr>
-            <tr>
-                <td>
-                    <label for="name">Nome</label>
-                </td>
-                <td>
-                    <input type="text" id="name" name="name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="sex">Genere</label>
-                </td>
-                <td>
-                    <input type="radio" id="donna" name="gender" value="donna">
-                    <label for="donna">Donna</label><br>
-                    <input type="radio" id="uomo" name="gender" value="uomo">
-                    <label for="uomo">Uomo</label><br>
-                    <input type="radio" id="non_binary" name="gender" value="non_binary">
-                    <label for="non_binary">Non binary</label><br>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="eyecolor">Colore degli occhi</label>
-                </td>
-                <td>
-                    <input list="eyecolors" name="eyecolor">
-                    <datalist id="eyecolors">
-                        <option value="Marroni">
-                        <option value="Verdi">
-                        <option value="Celesti">
-                        <option value="Neri">
+    <div class="container-fluid p-5 text-center">
+        <h1>SONDAGGIO</h1>
+    </div>
+    <div class="container p-5 ">
+    <form method="post">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label for="name" class="form-label" >Nome</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                  <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label for="lastname" class="form-label" >Cognome</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="lastname" name="name">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label for="sex" class="form-label">Genere</label>
+                </div>
+                <div class="col-sm-9">
+                    <label for="donna" class="form-check-label">
+                        <input type="radio" id="donna" name="gender" value="donna"  class="form-check-input" >
+                    Donna</label><br>
+                    <label for="uomo" class="form-check-label">
+                    <input type="radio" id="uomo" name="gender" value="uomo"  class="form-check-input" >
+                    Uomo</label><br>
+                    <label for="preferisco" class="form-check-label">
+                    <input type="radio" id="preferisco" name="gender" value="preferisco"  class="form-check-input" >
+                    Preferisco non dirlo</label><br>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label for="età">Età</label>
+                </div>
+                <div class="col-sm-9">
+                    <input list="age" id="age" name="age" class="form control">
+                    <datalist id="age" lass="dropdown-menu">
+                        <option  class="dropdown-item"  value="18-28">
+                        <option  class="dropdown-item"  value="28-40">
+                        <option  class="dropdown-item"  value="40-50">
+                        <option  class="dropdown-item"  value=">50">
                     </datalist>
-                </td>
-            </tr>
-            <tr>
-                <td>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
                     <label>Spuntare le corrispondenze</label>
-                </td>
-                <td>
-                    <input type="checkbox" id="alto" name="alto" value="isAlto">
-                    <label for="alto">Alto pi&ugrave; di 1,80m</label><br>
-                    <input type="checkbox" id="pesa" name="pesa" value="isPesante">
-                    <label for="pesa">Pesante pi&ugrave; di 90kg</label>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label for="des">Descrivere le capacit&agrave; atletiche</label><br>
-                    <textarea id="des" name="descrizione"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
+                </div>
+                <div class="col-sm-9">
+                    <input type="checkbox" id="spostao" name="sposato" value="isSposato" class="form-check-input" >
+                    <label for="sposato"  class="form-check-label">Sposato/a</label><br>
+                    <input type="checkbox" id="figli" name="figli" value="isFigli" class="form-check-input" >
+                    <label for="figli"  class="form-check-label">Figli</label>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    <label for="des" class="form-label">Altro</label><br>
+                    <textarea id="des" name="descrizione" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-12">
                     <div id="invio">
-                        <input type="submit">
+                        <input type="submit" class="btn btn-primary">
                     </div>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
     </form>
-
+</div>
 
 
 </body>
 
-</html>
+</html
